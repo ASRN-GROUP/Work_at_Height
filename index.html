@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASRN Group — Work at Height Safety</title>
+
+  <!-- Share/preview (update og:image to your hosted banner/photo) -->
+  <meta property="og:title" content="Work at Height Safety — ASRN Group" />
+  <meta property="og:description" content="Key rules, quick checklist, and reminders for safer work at height." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581091215367-59ab4b3d7a85?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:url" content="https://your-domain-or-github-pages-link/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a2b;
+      --muted:#8fa1bd;
+      --brand:#ff9b19;
+      --brand-2:#2dd4bf;
+      --ring: rgba(255,155,25,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Arial,Helvetica,sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, #102035 0%, transparent 60%) , var(--bg);
+      color:#e8eefc; line-height:1.55;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{opacity:.9}
+
+    .wrap{max-width:1100px; margin-inline:auto; padding:20px}
+    header{
+      display:flex; align-items:center; gap:14px; padding:14px 0 6px;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px; overflow:hidden; flex:0 0 auto;
+      box-shadow:0 0 0 4px rgba(255,255,255,.04), 0 10px 30px rgba(0,0,0,.35);
+      background:#0e1726 center/cover no-repeat;
+    }
+    .brand h1{font-size:18px; margin:0; letter-spacing:.3px}
+    .brand small{color:var(--muted)}
+
+    .hero{
+      position:relative; overflow:hidden; border-radius:22px; margin-top:18px;
+      background:#0f1728;
+      box-shadow:0 10px 35px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);
+    }
+    .hero .img{
+      aspect-ratio: 16 / 7; width:100%;
+      background:url(WorkatHeight.png) center/cover no-repeat;
+      filter:saturate(1) contrast(1.05) brightness(.9);
+    }
+    .hero .overlay{
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(11,18,32,.95) 90%);
+    }
+    .hero .text{
+      position:absolute; inset:auto 0 0 0; padding:24px 22px 22px;
+    }
+    .kicker{color:var(--brand-2); font-weight:700; font-size:13px; letter-spacing:.32px; text-transform:uppercase}
+    .hero h2{margin:8px 0 6px; font-size:28px}
+    .hero p{margin:0; color:#cbd6ec}
+
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:22px}
+    .card{
+      grid-column: span 12;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px; padding:18px;
+      box-shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+    .card h3{margin:0 0 10px; font-size:20px}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px}
+    .list li{margin:6px 0}
+
+    /* Checklist */
+    .checklist{display:grid; gap:10px; margin-top:8px}
+    .item{
+      display:flex; align-items:flex-start; gap:10px; padding:10px 12px; border-radius:12px;
+      background:#0f192b; border:1px solid rgba(255,255,255,.06);
+    }
+    .item input{transform:translateY(2px); width:18px; height:18px; accent-color:var(--brand)}
+    .badge{
+      display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700;
+      background:rgba(45,212,191,.1); color:var(--brand-2); border:1px solid rgba(45,212,191,.35);
+    }
+
+    /* Accordion */
+    .accordion button{
+      width:100%; text-align:left; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.08);
+      background:#0f192b; color:#e8eefc; cursor:pointer; font-weight:600
+    }
+    .accordion button:focus{outline:2px solid var(--ring)}
+    .panel{display:none; padding:12px 4px 6px}
+    .panel ul{margin:0; padding-left:18px}
+    .panel li{margin:6px 0}
+
+    .cta{
+      margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center
+    }
+    .btn{
+      background:linear-gradient(135deg, var(--brand), #ffb243);
+      color:#1a1205; font-weight:800; border:0; padding:10px 14px; border-radius:12px; cursor:pointer
+    }
+    .btn.alt{background:#0f192b; color:#e8eefc; border:1px solid rgba(255,255,255,.1)}
+    .stat{font-size:13px; color:var(--muted)}
+
+    footer{
+      margin-top:28px; padding:18px 0 26px; color:var(--muted); font-size:14px;
+      border-top:1px solid rgba(255,255,255,.06)
+    }
+
+    /* Responsive */
+    @media (min-width:780px){
+      .card--rules{grid-column: span 7}
+      .card--check{grid-column: span 5}
+      .hero h2{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <!-- Replace with your logo file -->
+      <div class="logo" style="background-image:url('Logo.png');"></div>
+      <div class="brand">
+        <h1>ASRN Group</h1>
+        <small class="muted">Building Safety, Design & Innovation</small>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Work at height hero">
+      <div class="img"></div>
+      <div class="overlay"></div>
+      <div class="text">
+        <div class="kicker">Work at Height Safety</div>
+        <h2>Falls are preventable. Plan, Equip, and Protect.</h2>
+        <p>Any job performed above 1.8 m/6 ft increases risk. Use engineered protection—every time.</p>
+        <div class="cta">
+          <button class="btn" id="collapseAll">Open All Tips</button>
+          <button class="btn alt" id="expandAll">Close All Tips</button>
+          <span class="stat" id="checkStat">Checklist: 0/6 complete</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="grid">
+      <article class="card card--rules">
+        <h3>Key Rules</h3>
+        <ul class="list">
+          <li><strong>Wear a full-body harness</strong> correctly fitted and connect to a certified anchor point.</li>
+          <li><strong>Use guardrails, lifelines, or safety nets</strong> wherever feasible as primary fall protection.</li>
+          <li><strong>Inspect equipment</strong> (harness, lanyards, hooks, anchors) before each use—remove damaged gear from service.</li>
+          <li><strong>Keep platforms clear</strong> of debris, spills, and loose materials to prevent slips and trips.</li>
+          <li><strong>Check weather</strong>—high winds, rain, or lightning can make work unsafe. Postpone if conditions deteriorate.</li>
+          <li><strong>Train & plan rescue</strong>—workers must be trained, and a prompt rescue plan must be in place.</li>
+        </ul>
+
+        <div class="accordion" style="margin-top:14px">
+          <button aria-expanded="false">Do’s</button>
+          <div class="panel">
+            <ul>
+              <li>Use certified scaffolds or MEWPs; verify load limits.</li>
+              <li>Maintain 3 points of contact when climbing ladders.</li>
+              <li>Tool-tether anything that can fall and strike people below.</li>
+            </ul>
+          </div>
+
+          <button aria-expanded="false" style="margin-top:8px">Don’ts</button>
+          <div class="panel">
+            <ul>
+              <li>Don’t bypass lifelines or anchors to “save time”.</li>
+              <li>Don’t stand on guardrails or makeshift platforms.</li>
+              <li>Don’t work alone at height without communication.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card card--check">
+        <h3>Quick Pre-Start Checklist</h3>
+        <p class="muted">Tick items as you verify them on site.</p>
+        <div class="checklist" id="checklist">
+          <label class="item"><input type="checkbox" /> Harness is undamaged and fits properly.</label>
+          <label class="item"><input type="checkbox" /> Lanyard, hooks, and energy absorber marked & inspected.</label>
+          <label class="item"><input type="checkbox" /> Certified anchor point selected and reachable.</label>
+          <label class="item"><input type="checkbox" /> Platform/ladder is stable, level, and secured.</label>
+          <label class="item"><input type="checkbox" /> Weather/wind acceptable; area below is barricaded.</label>
+          <label class="item"><input type="checkbox" /> Rescue plan and first-aid ready; team briefed.</label>
+        </div>
+        <p style="margin:12px 0 2px">
+          <span class="badge" id="badge">0 of 6 completed</span>
+        </p>
+      </aside>
+    </section>
+
+    <footer class="wrap" style="padding-inline:0">
+      <footer>
+        © <span id="yr"></span> ASRN Group. All Rights Reserved.
+      </footer>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Accordion
+    const buttons = document.querySelectorAll('.accordion button');
+    const panels  = document.querySelectorAll('.accordion .panel');
+    buttons.forEach((btn, i)=>{
+      btn.addEventListener('click', ()=>{
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !open);
+        panels[i].style.display = open ? 'none' : 'block';
+      });
+    });
+    document.getElementById('collapseAll').onclick = ()=>{
+      buttons.forEach((b,i)=>{ b.setAttribute('aria-expanded','true'); panels[i].style.display='block'; });
+    };
+    document.getElementById('expandAll').onclick = ()=>{
+      buttons.forEach((b,i)=>{ b.setAttribute('aria-expanded','false'); panels[i].style.display='none'; });
+    };
+
+    // Checklist progress
+    const checks = Array.from(document.querySelectorAll('#checklist input[type="checkbox"]'));
+    const badge  = document.getElementById('badge');
+    const stat   = document.getElementById('checkStat');
+    const update = ()=>{
+      const done = checks.filter(c=>c.checked).length;
+      badge.textContent = `${done} of ${checks.length} completed`;
+      stat.textContent  = `Checklist: ${done}/${checks.length} complete`;
+    };
+    checks.forEach(c=>c.addEventListener('change', update));
+    update();
+  </script>
+</body>
+</html>
